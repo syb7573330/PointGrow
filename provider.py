@@ -10,7 +10,7 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 if not os.path.exists(DATA_DIR):
   os.mkdir(DATA_DIR)
 if not os.path.exists(os.path.join(DATA_DIR, 'ShapeNet7')):
-  www = 'https://www.dropbox.com/s/yuq4sbfqq5btune/ShapeNet7.zip'
+  www = 'https://www.dropbox.com/s/nlcswrxul1ymypw/ShapeNet7.zip'
   zipfile = os.path.basename(www)
   os.system('wget %s; unzip %s' % (www, zipfile))
   os.system('mv %s %s' % (zipfile[:-4], DATA_DIR))
