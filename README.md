@@ -29,3 +29,22 @@ Model parameters will be stored under "_log/unconditional_model_saca_a/02691156_
 python generate_unconditional.py --cat 02691156 --model unconditional_model_saca_a --tot_pc 300
 ```
 The generated point clouds will be stored in the format of numpy array under "_res/unconditional_model_saca_a/res_02691156.npy_".
+
+## Conditional PointGrow
+### One-hot categorical vectors
+PointGrow conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane is writen as [1, 0, 0, 0, 0, 0, 0]. 
+
+* Train conditional PointGrow for one-hot vectors:
+``` bash
+python train_conditional_one_hot.py
+```
+Model parameters will be saved under "_log/conditional_model_one_hot_".
+
+* To generate 50 point clouds for airplane (cat_idx = 0) using the pre-trained model:
+``` bash
+python generate_conditional_one_hot.py --cat_idx 0 --tot_pc 50
+```
+The generated point clouds will be stored in the format of numpy array under "_res/conditional_model_one_hot/res_02691156.npy_".
+
+
+
