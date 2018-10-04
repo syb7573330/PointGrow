@@ -19,14 +19,14 @@ The model is trained per category, change the ShapeNet category id when working 
 | Cabinet       | 02933112      |
 | Lamp          | 03636649      |
 
-* Run unconditional PointGrow training script for car category with SACA-A module:
+* Run unconditional PointGrow training script for airplane category with SACA-A module:
 ``` bash
-python train_unconditional.py --cat 02958343 --model unconditional_model_saca_a
+python train_unconditional.py --cat 02691156 --model unconditional_model_saca_a
 ```
-Model parameters will be stored under "_log/unconditional_model_saca_a/02958343_".
+Model parameters will be stored under "_log/unconditional_model_saca_a/02691156_".
 
-* To generate 300 point clouds for car category using the pre-trained model:
+* To generate 300 point clouds for airplane category using the pre-trained model:
 ``` bash
-python generate_unconditional.py --cat 02958343 --model unconditional_model_saca_a --tot_pc 300
+python generate_unconditional.py --cat 02691156 --model unconditional_model_saca_a --tot_pc 300
 ```
-The generated point clouds will be stored in the format of numpy array under "_res/unconditional_model_saca_a/res_02958343.npy_".
+The generated point clouds will be stored in the format of numpy array under "_res/unconditional_model_saca_a/res_02691156.npy_".
