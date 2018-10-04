@@ -6,7 +6,6 @@ We provided processed point clouds from 7 categories in [ShapeNet](https://www.s
 
 
 ## Unconditional PointGrow
-### Train
 The model is trained per category, change the ShapeNet category id when working on different categories.
 
 |    Category   |      Id       | 
