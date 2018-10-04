@@ -32,7 +32,7 @@ The generated point clouds will be stored in the format of numpy array under "_r
 
 ## Conditional PointGrow
 ### One-hot categorical vectors
-PointGrow conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane is writen as [1, 0, 0, 0, 0, 0, 0]. 
+PointGrow conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane can be expressed as [1, 0, 0, 0, 0, 0, 0]. 
 
 * Train conditional PointGrow for one-hot vectors:
 ``` bash
