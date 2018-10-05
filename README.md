@@ -47,6 +47,6 @@ python generate_conditional_one_hot.py --cat_idx 0 --tot_pc 50
 The generated point clouds will be stored in the format of numpy array under "_res/conditional_model_one_hot/res_02691156.npy_".
 
 ### Image embeddings 
-Generate point clouds conditioned on the embedding vectors of given 2D images. We still use ShapeNet point clouds, and obtain their 2D renderings from [3D-R2N2](https://github.com/chrischoy/3D-R2N2). A collection of 2D images of the shape categories used in this project, and the shape ids that match the point clouds provided in this project can be found [here](https://www.dropbox.com/s/cf1fak6ssvauqmr/ShapeNetRenderings.zip). 
+Generate point clouds conditioned on the embedding vectors of given 2D images. We still use ShapeNet point clouds, and obtain their 2D renderings from [3D-R2N2](https://github.com/chrischoy/3D-R2N2). A collection of 2D images of airplane and car categories and their shape ids matching the point clouds provided in this project can be found [here](https://www.dropbox.com/s/vx3ky2ttienxh2x/ShapeNetRenderings.zip). 
 
 
