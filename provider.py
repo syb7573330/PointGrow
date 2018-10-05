@@ -9,8 +9,18 @@ sys.path.append(BASE_DIR)
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 if not os.path.exists(DATA_DIR):
   os.mkdir(DATA_DIR)
+
+# Download ShapeNet point clouds
 if not os.path.exists(os.path.join(DATA_DIR, 'ShapeNet7')):
   www = 'https://www.dropbox.com/s/nlcswrxul1ymypw/ShapeNet7.zip'
+  zipfile = os.path.basename(www)
+  os.system('wget %s; unzip %s' % (www, zipfile))
+  os.system('mv %s %s' % (zipfile[:-4], DATA_DIR))
+  os.system('rm %s' % (zipfile))
+
+# Download ShapeNet renderings and the shape ids matching ShapeNet7
+if not os.path.exists(os.path.join(DATA_DIR, 'ShapeNetRenderings')):
+  www = 'https://www.dropbox.com/s/vx3ky2ttienxh2x/ShapeNetRenderings.zip'
   zipfile = os.path.basename(www)
   os.system('wget %s; unzip %s' % (www, zipfile))
   os.system('mv %s %s' % (zipfile[:-4], DATA_DIR))
