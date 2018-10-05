@@ -32,7 +32,7 @@ The generated point clouds will be stored in the format of numpy array under "_r
 
 ## Conditional PointGrow
 ### One-hot categorical vectors
-PointGrow conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane can be expressed as [1, 0, 0, 0, 0, 0, 0]. 
+Generate point clouds conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane can be expressed as [1, 0, 0, 0, 0, 0, 0]. 
 
 * Train conditional PointGrow for one-hot vectors:
 ``` bash
@@ -46,5 +46,7 @@ python generate_conditional_one_hot.py --cat_idx 0 --tot_pc 50
 ```
 The generated point clouds will be stored in the format of numpy array under "_res/conditional_model_one_hot/res_02691156.npy_".
 
+### Image embeddings 
+Generate point clouds conditioned on the embedding vectors of given 2D images. We still use ShapeNet point clouds, and obtain their 2D renderings from 3D-R2N2(https://github.com/chrischoy/3D-R2N2). A collection of 2D images of the shape categories used in this project, and the shape ids that match the point clouds provided in this project can be found here(https://www.dropbox.com/s/cf1fak6ssvauqmr/ShapeNetRenderings.zip). 
 
 
