@@ -12,7 +12,7 @@ def sample_pc_from_obj(path, n_samples=5000, furthest_samples=1024):
         n_samples: The total number of points to sample from the mesh.
         furthest_samples: The final number of points to keep representing the shapes using farthest point sampling.
       Return:
-        A numpy array of size (furthest_samples, 3) representing the sampled point cloud.
+        A numpy array of size (furthest_samples, 3) representing the sampled point cloud, ordered as (x, y, z).
   """
   # Store vertices and faces
   vs = []
