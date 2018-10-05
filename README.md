@@ -24,7 +24,7 @@ python train_unconditional.py --cat 02691156 --model unconditional_model_saca_a
 ```
 Model parameters will be stored under "_log/unconditional_model_saca_a/02691156_".
 
-* To generate 300 point clouds for airplane category using the pre-trained model:
+* For example, to generate 300 point clouds for airplane category using the pre-trained model:
 ``` bash
 python generate_unconditional.py --cat 02691156 --model unconditional_model_saca_a --tot_pc 300
 ```
@@ -34,13 +34,13 @@ The generated point clouds will be stored in the format of numpy array under "_r
 ### One-hot categorical vectors
 Generate point clouds conditioned on additional one-hot vectors, with their non-empty elements indicating ShapeNet categories. For example, following the order in the above table, the one-hot vector for airplane can be expressed as [1, 0, 0, 0, 0, 0, 0]. 
 
-* Train conditional PointGrow for one-hot vectors:
+* Train conditional PointGrow with one-hot vectors:
 ``` bash
 python train_conditional_one_hot.py
 ```
 Model parameters will be saved under "_log/conditional_model_one_hot_".
 
-* To generate 50 point clouds for airplane (cat_idx = 0) using the pre-trained model:
+* For example, to generate 50 point clouds for airplane (cat_idx = 0) using the pre-trained model:
 ``` bash
 python generate_conditional_one_hot.py --cat_idx 0 --tot_pc 50
 ```
@@ -49,4 +49,15 @@ The generated point clouds will be stored in the format of numpy array under "_r
 ### Image embeddings 
 Generate point clouds conditioned on the embedding vectors of given 2D images. We still use ShapeNet point clouds, and obtain their 2D renderings from [3D-R2N2](https://github.com/chrischoy/3D-R2N2). A collection of 2D images of airplane and car categories and their shape ids matching the point clouds provided in this project can be found [here](https://www.dropbox.com/s/vx3ky2ttienxh2x/ShapeNetRenderings.zip). 
 
+* Train conditional PointGrow with 2D image embeddings for airplane category:
+``` bash
+python train_conditional_im.py --cat 02691156
+```
+Model parameters will be saved under "_log/conditional_model_im/02691156_".
 
+* For example, to generate 50 point clouds for ShapeNet airplane testing images using the pre-trained model:
+``` bash
+python generate_conditional_im.py --tot_pc 50 --batch_size 25 --cat 02691156
+```
+The _batch_size_ variable is recommened to be set less than 25 to fit GPU memory. The _tot_pc_ variable will be truncated to a multiple of _batch_size_ if _tot_pc_ is larger than _batch_size_. 
+The generated point clouds will be stored in the format of numpy array under "_res/conditional_model_im/res_02691156.npy_".
