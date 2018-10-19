@@ -1,6 +1,10 @@
 # PointGrow: Autoregressively Learned Point Cloud Generation with Self-Attention
 This work presents a novel autoregressive model, PointGrow, which generates realistic point cloud samples from scratch or conditioned on given semantic contexts. This model operates recurrently, with each point sampled according to a conditional distribution given its previously-generated points. It is further augmented with dedicated self-attention modules to capture long-range interpoint dependencies during the generation process.
 
+[[Project]](https://liuziwei7.github.io/projects/PointGrow) [[Paper]](https://arxiv.org/abs/1810.05591)
+
+<img src='./assets/demo_teaser.png' width=800>
+
 ## Data
 We provided processed point clouds from 7 categories in [ShapeNet](https://www.shapenet.org), including airplane, car, table, chair, bench, cabinet and lamp. The coordinates of those point clouds, arranged as (z, y, x), range from 0 to 1. They are sorted in the order of z, y and x, and can be downloaded from [here](https://www.dropbox.com/s/nlcswrxul1ymypw/ShapeNet7.zip).
 
@@ -61,3 +65,16 @@ python generate_conditional_im.py --tot_pc 50 --batch_size 25 --cat 02691156
 ```
 The _batch_size_ variable is recommened to be set less than 25 to fit GPU memory. The _tot_pc_ variable will be truncated to a multiple of _batch_size_ if _tot_pc_ is larger than _batch_size_. 
 The generated point clouds will be stored in the format of numpy array under "_res/conditional_model_im/res_02691156.npy_".
+
+## Citation
+Please cite this paper if you want to use it in your work,
+
+@article{sun2018pointgrow,
+  title={PointGrow: Autoregressively Learned Point Cloud Generation with Self-Attention},
+  author={Sun, Yongbin and Wang, Yue and Liu, Ziwei and Siegel, Joshua E and Sarma, Sanjay E},
+  journal={arXiv preprint arXiv:1810.05591},
+  year={2018}
+}
+
+## License
+MIT License
