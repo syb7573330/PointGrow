@@ -70,11 +70,12 @@ The generated point clouds will be stored in the format of numpy array under "_r
 Please cite this paper if you want to use it in your work,
 
 ```
-@article{sun2018pointgrow,
-  title={PointGrow: Autoregressively Learned Point Cloud Generation with Self-Attention},
-  author={Sun, Yongbin and Wang, Yue and Liu, Ziwei and Siegel, Joshua E and Sarma, Sanjay E},
-  journal={arXiv preprint arXiv:1810.05591},
-  year={2018}
+@inproceedings{sun2020pointgrow,
+  title={Pointgrow: Autoregressively learned point cloud generation with self-attention},
+  author={Sun, Yongbin and Wang, Yue and Liu, Ziwei and Siegel, Joshua and Sarma, Sanjay},
+  booktitle={The IEEE Winter Conference on Applications of Computer Vision},
+  pages={61--70},
+  year={2020}
 }
 ```
 
